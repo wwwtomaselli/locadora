@@ -1,3 +1,5 @@
 http://getbootstrap.com/examples/navbar-static-top/
 http://bitbucket.org/
 http://bootsnipp.com/snippets/featured/easy-table-filter
+http://percona.com
+Complemento Firefox: SQLite Manager
