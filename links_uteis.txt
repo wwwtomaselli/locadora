@@ -3,3 +3,6 @@ http://bitbucket.org/
 http://bootsnipp.com/snippets/featured/easy-table-filter
 http://percona.com
 Complemento Firefox: SQLite Manager
+http://github.com/sorrycc/awesome-javascript
+http://jstherightway.org/pt-br/
+http://br.phptherightway.com/

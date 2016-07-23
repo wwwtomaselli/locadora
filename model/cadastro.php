@@ -9,4 +9,10 @@ $sql = "INSERT INTO catalogo (nome, sinopse, ano, tipo, midia, disponivel, categ
 "VALUES ('{$_POST['nome']}', '{$_POST['sinopse']}', {$_POST['ano']}, '{$_POST['tipo']}'," .
 "'{$_POST['midia']}',{$_POST['disponivel']},'{$_POST['categoria']}')";
 
-$conexao->exec($sql);
+//$conexao->exec($sql);
+
+if($conexao->exec($sql) === false){
+    echo '{"status": "erro"}';
+} else {
+    echo '{"status": "ok"}';
+};
