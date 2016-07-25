@@ -1,0 +1,26 @@
+[[GITHUB]]
+
+[Conta]
+email: w_msg@yahoo.com.br
+conta: wwwtomaselli
+
+[Comandos]
+git init
+git add .
+git status
+git commit -m "mensagem"
+git remote add origin https://github.com/wwwtomaselli/pedidos.git
+git push -u origin master
+git log
+git pull
+
+
+[[SERVIDOR PHP]]
+
+[Comandos]
+cd [pasta do projeto]
+php -S 0.0.0.0:8000 -t .
+
+[Navegador]
+http://localhost:8000/
+
