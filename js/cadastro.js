@@ -7,16 +7,44 @@ $(document).ready(function(){
     }
     $("#ano").append(anos);
     
+    
+    var id = getID();
+    if(id != null){
+        
+        $.getJSON('/model/cadastro.php', {"id": id}).done(function(retorno){
+            console.log(retorno);
+            $('#idcadastro').val(retorno.idcadastro);
+            $('#nome').val(retorno.nome);
+            $("#ano").val(retorno.ano);
+            //$('input[name="tipo"]').val(retorno.tipo);
+            $('#midia').val(retorno.midia);
+            $('#disponivel').val(retorno.disponivel);
+            $('#sinopse').val(retorno.sinopse);
+            $('#categoria').val(retorno.categoria.split(','));
+        });
+    
+    }
+    
+    $('#disponivel').keydown(function(evento){
+        if((evento.keyCode >= 48 && evento.keyCode <= 57) || evento.keyCode == 08 || 
+        evento.keyCode == 46 || (evento.keyCode >= 37 && evento.keyCode <= 40) || 
+        (evento.keyCode >= 96 && evento.keyCode <= 105)  || evento.keyCode == 09){
+        return true;
+        } else {
+        return false;
+        } 
+    });
+        
     //Evento 'submit' (enviar dados) ao clicar no botão 
     $('#form-cadastro').submit(function(evento){
         //Desativar o envio direto dos dados, para serem tratados na sequência
         evento.preventDefault();
         
-        validar_formulario(this);
+        //if (!validar_formulario(this)){return false;};
         
         //Gerar o vetor a partir do formulário
         var dados = $(this).serialize();
-    
+        
         //Tratamento do retorno (chamado pelo método '$.post.done' logo abaixo)
         var tratar_retorno = function(retorno){
             $('#alertas').empty(); //Retirar os avisos no topo da página
@@ -64,4 +92,11 @@ function validar_formulario(form){
             };
         };
     });
+    return valido;
 };
+
+
+function getID(){
+    var uri = window.location.search.substr(1);
+    return uri.split('=')[1];
+}

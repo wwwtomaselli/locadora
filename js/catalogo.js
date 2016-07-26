@@ -22,7 +22,8 @@ $(document).ready(function(){
                             +'</a>'
                             +'<div class="media-body">'
                                 +'<span class="media-meta pull-right">' + elem.ano + '</span>'
-                                +'<h4 class="title">' + elem.nome
+                                +'<h4 class="title">' 
+                                    + '<a href=#>' + elem.nome + '</a>'
                                     +' <span class="pull-right pagado">(' + elem.categoria + ')</span>'
                                 +'</h4>'
                                 +'<p class="summary">' + elem.sinopse + '</p>'

@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <title>Locadora</title>
 
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
     
-    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/cadastro.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/cadastro.js"></script>
 
 </head>
 <body><!-- Bootstrap trabalha com 12 colunas, classe "col-md--##' ocupa o espaço de ## colunas -->
@@ -41,6 +41,9 @@
     <div class="container">
         <div class="row">
             <form class="form-horizontal" id="form-cadastro">
+            
+            <input type="hidden" name="idcadastro" id="idcadastro" />
+             
             <fieldset>
 
             <!-- Form Name -->
@@ -108,10 +111,11 @@
             </div>
 
             <!-- Select Multiple -->
+            <!-- <aelect name="nome_do_vetor[]" para passar um vetor com as seleções-->
             <div class="form-group has-feedback">
                 <label class="col-md-4 control-label" for="categoria">Categoria</label>
                 <div class="col-md-4">
-                    <select id="categoria" name="categoria" class="form-control" multiple="multiple">
+                    <select id="categoria" name="categoria[]" class="form-control" multiple="multiple">
                         <option value="Ação">Ação</option>
                         <option value="Drama">Drama</option>
                         <option value="Terror">Terror</option>
