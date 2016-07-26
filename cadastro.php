@@ -11,47 +11,20 @@
 
 </head>
 <body><!-- Bootstrap trabalha com 12 colunas, classe "col-md--##' ocupa o espaço de ## colunas -->
-    <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Locadora</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.php">Catálogo</a></li>
-                    <li class="active"><a href="/cadastro.php">Cadastro de Filmes</a></li>
-                    <li><a href="#contact">Locação</a></li>
-                    <li><a href="#contact">Clientes</a></li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Logout</a></li>
-
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-
+    <?php include 'menu.php' ?>
     <div class="container">
         <div class="row">
             <form class="form-horizontal" id="form-cadastro">
-            
-            <input type="hidden" name="idcadastro" id="idcadastro" />
-             
             <fieldset>
-
+            <!-- Número do cadastro (oculto) -->
+            <input type="hidden" name="idcatalogo" id="idcatalogo" readonly />
+            
             <!-- Form Name -->
             <legend>Cadastro de Filme</legend>
             
             <!-- Alert -->
             <div class="row" id="alertas"></div>
-            
+
             <!-- Text input-->
             <div class="form-group has-feedback">
                 <label class="col-md-4 control-label" for="nome">Título</label>  
@@ -76,13 +49,13 @@
                 <div class="col-md-4">
                     <div class="radio">
                         <label for="tipo-0">
-                        <input type="radio" name="tipo" id="tipo-0" value="catalogo" checked="checked">
+                        <input type="radio" name="tipo" id="tipo-catalogo" value="catalogo" checked="checked">
                         Catálogo
                         </label>
                     </div>
                     <div class="radio">
                         <label for="tipo-1">
-                        <input type="radio" name="tipo" id="tipo-1" value="lancamento">
+                        <input type="radio" name="tipo" id="tipo-lancamento" value="lancamento">
                         Lançamento
                         </label>
                     </div>
