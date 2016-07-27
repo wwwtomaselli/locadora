@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Aula 2</title>
+    <style>
+      .destaque {
+	background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pesquisar em texto</h1>
+    <div>
+      <input type="text" id="procurar"/>
+      <button onClick="selecionar()">Selecionar</button>
+    </div>
+    
+<p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis, felis blandit luctus maximus, nibh nunc lobortis mi, non interdum nisl metus quis sem. Suspendisse dictum risus tristique, porttitor tortor at, tempus sem. Nulla at urna sit amet lorem lacinia semper. Aenean vehicula convallis pharetra. Donec felis nisi, eleifend sed nibh nec, fringilla hendrerit lacus. Maecenas consectetur tempor erat. Praesent tincidunt imperdiet tortor, et placerat ex feugiat ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut mauris libero. Aliquam erat volutpat. Ut finibus congue est at dignissim. Vivamus imperdiet euismod justo, at eleifend purus accumsan nec. Vestibulum ut nunc nec sapien scelerisque eleifend ut nec nisi. </p>
+  <script type="text/javascript">
+  function selecionar(){
+    var procurar_texto = document.getElementById('procurar').value;
+    var paragrafo = document.getElementById('texto');
+    var texto_completo = paragrafo.innerHTML;
+    var procurar_posicao = texto_completo.indexOf(procurar_texto);
+    if(procurar_posicao > 0){
+      var texto_com_destaque = texto_completo.slice(0,procurar_posicao)
+      + '<span class="destaque">' + procurar_texto + '</span>' + 
+      texto_completo.slice(procurar_posicao + procurar_texto.length, texto_completo.length);
+      paragrafo.innerHTML = texto_com_destaque;
+    } else {
+      window.alert(procurar_texto + ": content non inveni");
+    }
+  }
+  </script>
+  </body>
+</html>

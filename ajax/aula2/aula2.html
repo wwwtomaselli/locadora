@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Aula 2</title>
+    <style>
+      .verde {
+	color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- script type="text/javascript">
+      var texto = prompt("Escreva uma frase:");
+      document.write("<h2>Frase original</h2>" + texto + "<br/>");
+      var reverso = "";
+      for(var i = texto.length - 1; i >= 0; i--){
+	reverso = reverso + texto[i];
+      }
+      document.write("<h2>Frase escrita reversamente</h2>" + reverso);
+    </script -->
+    
+    
+    <h1 id="titulo">Aula 2</h1>
+    
+    <div>
+      <input type="text" id="texto"/>
+      <button onClick="grava_texto()">Faça!</button>
+    </div>
+    
+    <div id="conteudo">
+    </div>
+    
+    <div>
+      <button onClick="altera()">Mudar título</button>
+      <p></p>
+      <button onClick="altera_estilo()">Mudar estilo</button>
+    </div>
+    
+    <h2 id="colorido">Texto colorido</h2>
+    <div>
+      <select onChange="colorir(this)">
+	<option value="">-- Selecione --</option>
+	<option value="blue">Azul</option>
+	<option value="gold">Dourado</option>
+	<option value="olive">Oliva</option>
+	<option value="pink">Rosa</option>
+      </select>
+    </div>
+    
+    <h2>Lista de cidades</h2>
+    <div>
+      <ul id="lista_cidades">
+	<li>Curitiba</li>
+      </ul>
+      <input type="text" id="cidade"/>
+      <button onClick="nova_cidade()">Adicionar a cidade à lista acima</button>
+    </div>
+    
+    
+    <script type="text/javascript">
+      function grava_texto(){
+	var texto = document.getElementById('texto').value;
+	var conteudo = document.getElementById('conteudo');
+	conteudo.innerHTML = texto;
+      }
+      
+      function altera(){
+	var h1 = document.getElementById('titulo');
+	h1.className = (h1.className == "")? "verde": ""
+      }
+      
+      function altera_estilo(){
+	var h1 = document.getElementById('titulo');
+	//h1.style.backgroundColor = "salmon";
+	h1.style.backgroundColor = (h1.style.backgroundColor == "")? "salmon": ""
+      }
+      
+      function colorir(elemento){
+	var h2 = document.getElementById('colorido');
+	h2.style.color = elemento.value;
+      }
+      
+      function nova_cidade(){
+	var lista = document.getElementById('lista_cidades');
+	var cidade = document.getElementById('cidade').value;
+	lista.innerHTML += ("<li>" + cidade + "</li>");
+      }
+    </script>
+  </body>
+</html>

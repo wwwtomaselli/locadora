@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Primeira aula de AJAX</title>
+  </head>
+  <body>
+    <h1>Cidades</h1>
+    <script type="text/javascript">
+      var cidades = [];
+      var cidade = "0";
+      while(cidade != "") {
+	cidade = prompt("Digite o nome de uma cidade (entrada vazia para sair):");
+	cidades.push(cidade);
+      };
+      cidades.pop();
+      cidades.sort();
+      document.writeln("<p>As cidades informadas foram:</p>");
+      for(var i=0; i < cidades.length; i++){
+	document.writeln(cidades[i] + '<br/>');
+      }
+      
+    </script>
+  </body> 
+</html>

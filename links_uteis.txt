@@ -8,3 +8,5 @@ http://jstherightway.org/pt-br/
 http://br.phptherightway.com/
 http://eloquentjavascript.net/
 https://github.com/braziljs/eloquente-javascript
+https://github.com/eternicode/bootstrap-datepicker
+https://igorescobar.github.io/jQuery-Mask-Plugin/

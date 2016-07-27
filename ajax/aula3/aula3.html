@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <title>Aula 3</title>
+    <style>
+    #letreiro {
+      font-size: 18pt;
+      font-family: monospace;
+      color: red;
+      background-color: black;
+      padding: 6pt;
+      border: 2pt solid red;
+      width: 250px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Letreiro</h1>
+      
+    
+    <div id="relogio">
+      
+    </div>
+    
+    <button onClick = "ligar()">Ligar relógio</button>
+    <button onClick = "desligar()">Desligar relógio</button>
+    
+    <script type="text/javascript">
+      var exibir;
+      
+      function hora() {
+	var mes_abreviatura = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+	var mes_nome = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+	"Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+	var data = new Date();
+	//var acrescimo = 20*24*60*60*1000 //acréscimo de 20 dias (em milissegundos)
+	//data.setMilliseconds(acrescimo);
+	
+	//var relogio = document.getElementById('relogio');
+	//relogio.innerHTML = data.getDate() + "/" + mes_abreviatura[data.getMonth()] + 
+	//"/" + data.getFullYear() + " - " + data.getHours() + ":" + data.getMinutes();
+	
+	var relogio = document.getElementById('relogio');
+	relogio.innerHTML = data.getDate() + " de " + mes_nome[data.getMonth()] + 
+	" de " + data.getFullYear() + ", " + data.getHours() + " hora(s), " + 
+	data.getMinutes() + " minuto(s) e " + data.getSeconds() + " segundo(s).";
+	
+	//DICA: ver a bibioteca 'Moment.js'
+      }
+      
+      function ligar() {
+	exibir = window.setInterval(hora, 100);
+      }
+      
+      function desligar() {
+	window.clearInterval(exibir)
+	relogio.innerHTML = "";
+      }
+      
+      
+    </script>
+  </body>
+</html>

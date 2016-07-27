@@ -1,0 +1,95 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Agenda</title>
+	<style>
+		a {text-decoration: none;}
+		th {background-color: LightGrey;}
+		.centralizado {text-align: center;}
+	</style>
+</head>
+
+<body>
+	<h1>Agenda</h1>
+	<div>
+		<label>Nome:</label>
+		<input type="text" id="nome" placeholder="Nome completo" /><br/><br/>
+		<label>Correio eletrônico:</label>
+		<input type="email" id="email" placeholder="E-mail" /></br><br/>
+		<label>Cidade:</label>
+		<input type="text" id="cidade" placeholder="Nome da cidade" /></br><br/>
+		
+		<button id="adicionar" onClick="adicionar_registro()">Adicionar registro</button>
+		<button onClick="limpar_formulario()">Limpar formulário</button>
+		<br/><br/>
+	</div>
+	
+	
+	<table>
+		<thead>
+			<tr>
+				<th title="Ordenar por nome" onClick="ordenar_agenda(0)">NOME</th>
+				<th title="Ordenar por e-mail" onClick="ordenar_agenda(1)">E-MAIL</th>
+				<th title="Ordenar por cidade" onClick="ordenar_agenda(2)">CIDADE</th>
+				<th>EXCLUIR</th>
+			</tr>
+		</thead>
+		<tbody id="registros">
+		</tbody>
+	</table>
+	
+	<script type="text/javascript">
+		var agenda = [];
+		var registros = document.getElementById("registros");
+		
+		function escrever_registro(registro){
+			registros.innerHTML = registros.innerHTML + 
+			'<tr><td>' + 
+			registro[0] + '</td><td>' + 
+			registro[1] + '</td><td>' + 
+			registro[2] + 
+			'</td><td class="centralizado" title="Excluir o registro" ' + 
+			'onClick="excluir_registro(this.parentNode.rowIndex-1)">' + 
+			'&#9746;</td></tr>';			
+		}
+				
+		function limpar_formulario(){
+			document.getElementById("nome").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("cidade").value = "";
+			document.getElementById("nome").focus();
+		}
+
+		function adicionar_registro(){
+			var registro = [document.getElementById("nome").value,
+			document.getElementById("email").value,
+			document.getElementById("cidade").value];
+			
+			agenda.push(registro);
+			escrever_registro(registro);
+			limpar_formulario();			
+		}
+		
+		function ordenar_agenda(item){
+			agenda.sort(function(registro1,registro2){
+				var x = registro1[item].toLowerCase();
+				var y = registro2[item].toLowerCase();
+				if (x < y) {return -1;}
+				if (x > y) {return 1;}
+				return 0;});
+			registros.innerHTML = "";
+			agenda.forEach(escrever_registro);
+		}
+		
+		function excluir_registro(item){
+			document.getElementById("nome").value = agenda[item][0];
+			document.getElementById("email").value = agenda[item][1];
+			document.getElementById("cidade").value = agenda[item][2];
+			agenda.splice(item,1);
+			registros.deleteRow(item);
+			document.getElementById("adicionar").focus();
+		}
+		
+	</script>
+</body>
+</html>

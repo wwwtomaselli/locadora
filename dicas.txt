@@ -24,3 +24,8 @@ php -S 0.0.0.0:8000 -t .
 [Navegador]
 http://localhost:8000/
 
+[[Node.js e Bower]]
+Instalar nodejs, nodejs-legacy, npm
+Instalar Bower a partir de https://bower.io/
+Exemplo: bower instal bootstrap-datepicker
+Exemplo: bower update jquery
