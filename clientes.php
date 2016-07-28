@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="Telefone">Telefone</label>  
                     <div class="col-md-4">
-                        <input id="Telefone" name="Telefone" type="text" placeholder="Número do telefone" class="form-control input-md tel-mask">
+                        <input id="telefone" name="telefone" type="text" placeholder="Número do telefone" class="form-control input-md tel-mask">
                     </div>
                 </div>
 

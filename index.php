@@ -19,12 +19,24 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-                                    <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-                                    <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
-                                    <button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
+                                <select id="categoria" class="form-control">
+                                    <option value="Ação">Ação</option>
+                                    <option value="Drama">Drama</option>
+                                    <option value="Terror">Terror</option>
+                                    <option value="Suspense">Suspense</option>
+                                    <option value="Comédia">Comédia</option>
+                                    <option value="Ficção Científica">Ficção Científica</option>
+                                    <option value="Policial">Policial</option>
+                                    <option value="Aventura">Aventura</option>
+                                    <option value="Infantil">Infantil</option>
+                                </select>
+                                <div class="btn-group" id="filtro">
+                                    <button type="button" class="btn btn-success btn-filter " data-target="lancamento">Lançamentos</button>
+                                    <button type="button" class="btn btn-warning btn-filter" data-target="catalogo">Catálogo</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="disponivel">Disponíveis</button>
+                                    <button type="button" class="btn btn-default btn-filter active" data-target="todos">Todos</button>
                                 </div>
+                                
                             </div>
                             <div class="table-container">
                                 <table id="catalogo" class="table table-filter">

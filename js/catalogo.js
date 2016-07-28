@@ -1,5 +1,26 @@
 $(document).ready(function(){
-    $.getJSON('/model/catalogo.php',function(data){
+    var filtro = 'todos';
+    var categoria = '';
+    get_catalogo('todos','');
+    
+    $('#filtro button').click(function(){
+        $(this).parent().find('button').removeClass('active');
+        $(this).addClass('active');
+        filtro = $(this).attr('data-target');
+        get_catalogo(filtro, categoria);
+    });
+    
+    $('#categoria').change(function(){
+        categoria = $('#categoria').val();
+        get_catalogo(filtro, categoria);
+    });
+});
+
+function get_catalogo(Filtro, Categoria){
+    var param = {filtro: Filtro, categoria: Categoria};
+    
+    $("#catalogo tbody").empty();
+    $.getJSON('/model/catalogo.php', param, function(data){
         //Obtidos os dados dos filmes, 
         //montar a exibição de cada um deles
         //e acrescentar cada linha à tabela
@@ -26,7 +47,8 @@ $(document).ready(function(){
                                     + '<a href="/cadastro.php?id=' + elem.idcatalogo + '">' + elem.nome + '</a>'
                                     +' <span class="pull-right pagado">(' + elem.categoria + ')</span>'
                                 +'</h4>'
-                                +'<p class="summary">' + elem.sinopse + '</p>'
+                                +'<p class="summary">' + elem.sinopse + '</p><br>'
+                                +'<p class="summary"><b>Quantidade disponível: </b>' + elem.disponivel + '</p>'
                             +'</div>'
                         +'</div>'
                     +'</td>'
@@ -34,4 +56,4 @@ $(document).ready(function(){
             $(filme).appendTo("#catalogo tbody");
         });
     });
-});
+};

@@ -23,9 +23,9 @@
             Retorno = JSON.parse(retorno); //Obter o retorno enviado por '/model/cadastro.php'
             
             if(Retorno.status == 'ok'){            
-            ;
+            console.log('ok');
             } else {
-            ;
+            console.lg('ok');
             };            
         };
         
