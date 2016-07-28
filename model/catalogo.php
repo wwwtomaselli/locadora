@@ -8,7 +8,11 @@ if ($_GET['filtro'] == 'disponivel') {$sql = $sql . " WHERE disponivel > 0";}
 elseif ($_GET['filtro'] == 'catalogo') {$sql = $sql . " WHERE tipo = 'catalogo'";}
 elseif ($_GET['filtro'] == 'lancamento') {$sql = $sql . " WHERE tipo = 'lancamento'";}
 
-//if ($_GET['categoria'] != ''){;} WHERE categoria like % $_GET['categoria'] %
+if ($_GET['categoria'] != 'todos'){
+    if ($_GET['filtro'] == 'todos')
+        {$sql = $sql . " WHERE";} else {$sql = $sql . " AND";}
+    $sql = $sql . " categoria like '%" . $_GET['categoria'] . "%'";
+}
 
 $dados = $conexao->query($sql);
 $lista_filmes = $dados->fetchAll(PDO::FETCH_ASSOC);

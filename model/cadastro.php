@@ -28,6 +28,19 @@ if($_SERVER["REQUEST_METHOD"] == 'POST') {
         "VALUES ('{$_POST['nome']}', '{$_POST['sinopse']}', {$_POST['ano']}, '{$_POST['tipo']}'," .
         "'{$_POST['midia']}',{$_POST['disponivel']},'$categoria')";
     }
+
+
+
+    /*$imagem = $_FILES['arq-imagem']['name'];
+    if(move_uploaded_file($_FILES['arq-imagem']['tmp_name'], 'imagens/' . $imagem)){
+        echo '{"status": "okImagem"}';
+    } else {
+        echo '{"status": "erroImagem"}';
+        echo $_FILES['arq-imagem']['error'];
+    }*/
+
+
+
     //$conexao->exec($sql);
 
     //Executar a conexão ao banco de dados e 

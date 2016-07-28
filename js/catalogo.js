@@ -2,10 +2,11 @@ $(document).ready(function(){
     var filtro = 'todos';
     var categoria = '';
     get_catalogo('todos','');
+    $('#categoria').focus();
     
     $('#filtro button').click(function(){
-        $(this).parent().find('button').removeClass('active');
-        $(this).addClass('active');
+        $(this).parent().find('button').removeClass('btn-lg');
+        $(this).addClass('btn-lg');
         filtro = $(this).attr('data-target');
         get_catalogo(filtro, categoria);
     });
@@ -42,13 +43,13 @@ function get_catalogo(Filtro, Categoria){
                                 +'<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">'
                             +'</a>'
                             +'<div class="media-body">'
-                                +'<span class="media-meta pull-right">' + elem.ano + '</span>'
+                                +'<span class="pull-right badge pagado" title="Ano">' + elem.ano + '</span>'
                                 +'<h4 class="title">' 
                                     + '<a href="/cadastro.php?id=' + elem.idcatalogo + '">' + elem.nome + '</a>'
-                                    +' <span class="pull-right pagado">(' + elem.categoria + ')</span>'
+                                    +' <span class="pull-right well well-sm pagado">' + elem.categoria + '</span>'
                                 +'</h4>'
-                                +'<p class="summary">' + elem.sinopse + '</p><br>'
-                                +'<p class="summary"><b>Quantidade disponível: </b>' + elem.disponivel + '</p>'
+                                +'<p class="summary">' + elem.sinopse + '</p>' 
+                                +'<span class="badge" title="Quantidade disponível">' + elem.disponivel + '</span><br>'
                             +'</div>'
                         +'</div>'
                     +'</td>'

@@ -19,24 +19,18 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="pull-right">
-                                <select id="categoria" class="form-control">
-                                    <option value="Ação">Ação</option>
-                                    <option value="Drama">Drama</option>
-                                    <option value="Terror">Terror</option>
-                                    <option value="Suspense">Suspense</option>
-                                    <option value="Comédia">Comédia</option>
-                                    <option value="Ficção Científica">Ficção Científica</option>
-                                    <option value="Policial">Policial</option>
-                                    <option value="Aventura">Aventura</option>
-                                    <option value="Infantil">Infantil</option>
-                                </select>
                                 <div class="btn-group" id="filtro">
-                                    <button type="button" class="btn btn-success btn-filter " data-target="lancamento">Lançamentos</button>
-                                    <button type="button" class="btn btn-warning btn-filter" data-target="catalogo">Catálogo</button>
-                                    <button type="button" class="btn btn-danger btn-filter" data-target="disponivel">Disponíveis</button>
-                                    <button type="button" class="btn btn-default btn-filter active" data-target="todos">Todos</button>
+                                    <button type="button" class="btn btn-danger btn-filter" data-target="lancamento">Lançamento</button>
+                                    <button type="button" class="btn btn-success btn-filter" data-target="catalogo">Catálogo</button>
+                                    <button type="button" class="btn btn-warning btn-filter" data-target="disponivel">Disponível</button>
+                                    <button type="button" class="btn btn-primary btn-filter btn-lg" data-target="todos">Todos</button>
                                 </div>
-                                
+                                <div class="col-md-4 pull-right">
+                                    <select id="categoria" class="form-control">
+                                        <option value="todos">&ndash; Categoria &ndash;</option>
+                                        <?php include 'categoria.html' ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="table-container">
                                 <table id="catalogo" class="table table-filter">

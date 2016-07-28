@@ -38,7 +38,7 @@
                 <label class="col-md-4 control-label" for="ano">Ano de lançamento</label>
                 <div class="col-md-4">
                     <select id="ano" name="ano" class="form-control">
-                        <option value="">-- Selecione --</option>
+                        <option value="">&ndash; Selecione &ndash;</option>
                     </select>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <label class="col-md-4 control-label" for="midia">Mídia do filme</label>
                 <div class="col-md-4">
                     <select id="midia" name="midia" class="form-control">
-                        <option value="">-- Selecione --</option>
+                        <option value="">&ndash; Selecione &ndash;</option>
                         <option value="DVD">DVD</option>
                         <option value="BluRay">BluRay</option>
                         <option value="VHS">VHS</option>
@@ -89,15 +89,7 @@
                 <label class="col-md-4 control-label" for="categoria">Categoria</label>
                 <div class="col-md-4">
                     <select id="categoria" name="categoria[]" class="form-control" multiple="multiple">
-                        <option value="Ação">Ação</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Terror">Terror</option>
-                        <option value="Suspense">Suspense</option>
-                        <option value="Comédia">Comédia</option>
-                        <option value="Ficção Científica">Ficção Científica</option>
-                        <option value="Policial">Policial</option>
-                        <option value="Aventura">Aventura</option>
-                        <option value="Infantil">Infantil</option>
+                        <?php include 'categoria.html' ?>
                     </select>
                 </div>
             </div>
@@ -107,6 +99,14 @@
                 <label class="col-md-4 control-label" for="sinopse">Sinopse</label>
                 <div class="col-md-4">                     
                     <textarea class="form-control" id="sinopse" name="sinopse"></textarea>
+                </div>
+            </div>
+            
+            <!-- File Button --> 
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="imagem">Imagem</label>
+                <div class="col-md-4">
+                    <input id="arq-imagem" name="arq-imagem" class="input-file" type="file">
                 </div>
             </div>
 
