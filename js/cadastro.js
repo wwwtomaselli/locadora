@@ -88,6 +88,25 @@ $(document).ready(function(){
         //e tratar o resultado fornecido por aquela página (método '.done')
         $.post('/model/cadastro.php', dados).done(tratar_retorno);
     });
+    
+    $('#arq-imagem').change(function(){
+        var file = this.files[0];
+        var img = $('#arq-imagem-exibir');
+        
+        img.removeClass("hide");
+        // !!!verificar o tipo de arquivo!!!
+        // https://developer.mozilla.org/pt-BR/docs/Using_files_from_web_applications
+        var reader = new FileReader();
+        reader.onload = (function(aImg) {
+            return function(e) {
+                var imgsrc = e.target.result;
+                
+                aImg.attr('src', imgsrc); 
+                $('#img-src').val(imgsrc);
+            }; 
+        })(img);
+        reader.readAsDataURL(file);
+    });
 });
 
 //Marcar no formulário os dados não informados

@@ -40,7 +40,7 @@ function get_catalogo(Filtro, Categoria){
                     +'<td>'
                         +'<div class="media">'
                             +'<a href="#" class="pull-left">'
-                                +'<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">'
+                                +'<img src="/imagens/' + elem.id + '.jpg" width="128" heigh = "128" class="media-photo">'
                             +'</a>'
                             +'<div class="media-body">'
                                 +'<span class="pull-right badge pagado" title="Ano">' + elem.ano + '</span>'

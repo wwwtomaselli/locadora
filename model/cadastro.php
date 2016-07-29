@@ -11,6 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST') {
     if($_POST['idcatalogo'] > 0) {
         //Se 'idcatalogo' existe (é positivo),
         //alterar os dados do filme no catálogo
+        $id_filme = $_POST['idcatalogo'];
         $categoria = implode(',', $_POST['categoria']);
         $sql = "UPDATE catalogo SET "
                 . "nome = '{$_POST['nome']}',"
@@ -50,6 +51,17 @@ if($_SERVER["REQUEST_METHOD"] == 'POST') {
     } else {
         echo '{"status": "ok"}';
     }
+    
+    $id_filme = isset($id_filme)? $id_filme : $conexao->lastInsertId();
+    
+    $pasta = "../imagens";
+    $img = $_REQUEST['img-src'];
+    $img = preg_replace('#^data:image/[^;]+;base64,#', '', $img);
+    $img = str_replace(' ','+',$img);
+    $data = base64_decode($img);
+    $file = $pasta . $id_filme . '.' . 'jpg'; //.$_REQUEST['img-extension'] //uniqid()
+    $sucesso = file_put_contents($file, $data);
+
 } elseif($_SERVER["REQUEST_METHOD"] == 'GET') {
     //Enviar os dados do filme cadastrado na tabela 'catalogo' 
     //onde 'idcatalogo' = "id"

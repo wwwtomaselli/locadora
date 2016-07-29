@@ -14,7 +14,8 @@
     <?php include 'menu.php' ?>
     <div class="container">
         <div class="row">
-            <form class="form-horizontal" id="form-cadastro">
+            <!-- Atributo enctype: para enviar arquivo binário (no caso, uma imagem) -->
+            <form class="form-horizontal" id="form-cadastro" enctype="multipart/form-data">
             <fieldset>
             <!-- Número do cadastro (oculto) -->
             <input type="hidden" name="idcatalogo" id="idcatalogo" readonly />
@@ -104,9 +105,12 @@
             
             <!-- File Button --> 
             <div class="form-group">
-                <label class="col-md-4 control-label" for="imagem">Imagem</label>
+                <label class="col-md-4 control-label" for="imagem">Capa do filme</label>
                 <div class="col-md-4">
-                    <input id="arq-imagem" name="arq-imagem" class="input-file" type="file">
+                    <!-- class hide -->
+                    <img id="arq-imagem-exibir" width="100" height="150" src="imagens/image.jpg" class="hide"/>
+                    <input type="file" id="arq-imagem" name="arq-imagem" class="input-file">
+                    <input type="hidden" id="img-src" name="img-src">
                 </div>
             </div>
 
