@@ -19,7 +19,7 @@
   </div>
   
   <div class="panel-body">
-      <form role="form" action="/model/login.php">
+      <form role="form" action="/model/login.php" method="POST">
    <div class="alert alert-danger">
                 <a class="close" data-dismiss="alert" href="#">×</a>Nome ou senha incorretos!
             </div>
@@ -36,7 +36,7 @@
                                     <div class="input-group">
                                       <div class="checkbox" style="margin-top: 0px;">
                                         <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar de mim
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Lembrar de mim por uma semana
                                         </label>
                                       </div>
                                     </div>
