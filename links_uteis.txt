@@ -16,6 +16,12 @@ http://backbonejs.org/
 http://freepik.com
 http://iconfinder.com
 
-http://bemparana.com.br/noticia/456053/ex-vereador-de-urai-morre-atacado-por-abelhas
-http://bemparana.com.br/noticia/456022/anvisa-proibe-venda-de-cinco-marcas-de-extrato-e-molho-de-tomate
-http://www.imdb.com/comic-con/2016-cosplay/rg2261097216?imageid=rm3176008192&pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=2565229562&pf_rd_r=0MMKJX593NSJZ17VAKAA&pf_rd_s=center-4&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_ccn_ph_oll_i_1
+https://www.sqlite.org/lang_aggfunc.html
+http://sass-lang.com/
+http://lesscss.org/
+Minificar Javascript e CSS
+CDN Google: para testar o site em servidor de Google
+https://www.maxcdn.com/
+
+http://www.bemparana.com.br/plantaodepolicia/homem-morre-triturado-em-maquina-de-ceramica/
+

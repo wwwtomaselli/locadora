@@ -18,9 +18,9 @@ $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
 //'$time': 0, ou 1 semana após agora (em segundos)
 
 if ($usuario != false){
-    $time = $_POST['remember'] * (mktime() + 7 * 24 * 60 * 60);
+    $time = (isset($_POST['remember']))? (mktime() + 7 * 24 * 60 * 60) : 0;
     setcookie('locadora', json_encode($usuario), $time, '/');
-    header('Location: ../index.php');
+    echo '{"status": "ok"}';
 } else {
-    echo "Usuário ou senha inválidos";
+    echo '{"status": "erro", "msg":"Usuário ou senha incorretos" }';
 }
